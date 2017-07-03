@@ -24,7 +24,15 @@ use Mail;
 */
 
 $this->get('/', function () {
-    return view('welcome');
+    return Redirect::to('/index');
+});
+
+$this->get('/index', function () {
+    return view('home');
+});
+
+$this->get('/properties', function () {
+    return view('properties');
 });
 
 $this->auth();
