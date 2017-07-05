@@ -38,3 +38,9 @@ $this->get('/properties', function () {
 $this->auth();
 
 $this->get('/home', 'HomeController@index');
+
+$this->get('/sellappertment', 'IndexController@sellappertment');
+$this->post('/addappert', 'IndexController@addappert');
+
+
+$this->get('/pending', 'IndexController@pending');

@@ -1,7 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="">
+  @include('partials.nav')
+<!-- Page layout -->
+<section class="content-section">
+  <div class="container">
+    <ol class="breadcrumb">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Page</a></li>
+          <li class="active">Login</li>
+    </ol>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -63,4 +72,6 @@
         </div>
     </div>
 </div>
+</div>
+</section>
 @endsection

@@ -53,12 +53,6 @@ class AuthController extends Controller
             'lname' => 'required|max:255',
             'phoneno' => 'required|min:12|max:13|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'c_name' => 'required|max:255|unique:users',
-            'regNo' => 'required|min:10|unique:users',
-            'kra_pin' => 'required|min:10|unique:users',
-            'address' => 'required|max:255',
-            'town' => 'required|max:255',
-            'county' => 'required|max:255',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -74,14 +68,8 @@ class AuthController extends Controller
         return User::create([
             'fname' => $data['fname'],
             'lname' => $data['lname'],
-            'regNo' => $data['regNo'],
             'email' => $data['email'],
             'phoneno' => $data['phoneno'],
-            'c_name' => $data['c_name'],
-            'kra_pin' => $data['kra_pin'],
-            'address' => $data['address'],
-            'county' => $data['county'],
-            'town' => $data['town'],
             'password' => bcrypt($data['password']),
         ]);
     }

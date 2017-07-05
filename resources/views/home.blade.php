@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="">
+@include('partials.nav')
 <!-- Search page Interaction -->
 <div class="search-interaction row-float">
  <a class="tab row-float collapsed" data-toggle="collapse" href="#map-cotnent2">
@@ -320,4 +321,6 @@
   </div>
 </section>
 <!-- Content Section // -->
+
+</div>
 @endsection
