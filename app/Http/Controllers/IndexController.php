@@ -77,6 +77,7 @@ class IndexController extends Controller
      $property->bath     = Input::get('bath');
      $property->parking     = Input::get('parking');
      $property->size     = Input::get('size');
+     $property->status     = 'pending';
      $property->description     = Input::get('description');
      $property->user_id     = Auth::user()->id;
      $property->image     = $request->file;
@@ -89,7 +90,7 @@ class IndexController extends Controller
             base_path() . '/public/uploads', $fileName
         );
 
-     $pat = '/public/uploads/'.$fileName;
+     $pat = 'uploads/'.$fileName;
 
         $prop_obj = new Property();
         $prop_obj->id = $property->id;
@@ -245,7 +246,7 @@ class IndexController extends Controller
            base_path() . '/public/uploads', $fileName
        );
 
-    $pat = '/public/uploads/'.$fileName;
+    $pat = 'uploads/'.$fileName;
 
        $prop_obj = new Image();
        $prop_obj->id = $image->id;

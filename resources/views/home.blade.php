@@ -250,7 +250,7 @@
         <div class="grid-box wow fadeInUp2" data-wow-delay="500ms">
           <div class="image">
           <span class="box-type"><span class="text">Sale</span></span>
-            <img src="../public/images/property/home-1.jpg" alt="" height="234" width="360">
+            <img src="/images/property/home-1.jpg" alt="" height="234" width="360">
           </div>
           <div class="description">
             <h3><span class="type">Appertment:</span>
@@ -267,7 +267,7 @@
         <div class="grid-box wow fadeInUp2" data-wow-delay="600ms">
           <div class="image">
           <span class="box-type"><span class="text">Rent</span></span>
-            <img src="../public/images/property/home-2.jpg" alt="" height="234" width="360">
+            <img src="/images/property/home-2.jpg" alt="" height="234" width="360">
           </div>
           <div class="description">
             <h3><span class="type">Appertment:</span>
@@ -284,7 +284,7 @@
         <div class="grid-box wow fadeInUp2" data-wow-delay="700ms">
           <div class="image">
           <span class="box-type red"><span class="text">Rent</span></span>
-            <img src="../public/images/property/home-3.jpg" alt="" height="234" width="360">
+            <img src="/images/property/home-3.jpg" alt="" height="234" width="360">
           </div>
           <div class="description">
             <h3><span class="type">Appertment:</span>

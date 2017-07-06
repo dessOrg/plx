@@ -48,7 +48,7 @@
         <div class="grid-box">
           <div class="image ">
           <span class="box-type"><span class="text">Sale</span></span>
-            <img src="{{ $key->image }}" alt="" height="234" width="360">
+            <img src="/{{ $key->image }}" alt="" height="234" width="360">
           </div>
           <div class="description">
             <h3><span class="type">{{ $key->category }}:</span>
