@@ -51,7 +51,7 @@
           @foreach($images as $key)
           <div class="grid-box">
             <div class="image ">
-              <img src="/{{ $key->image }}" alt="" height="234" width="360">
+              <img src="/public/{{ $key->image }}" alt="" height="234" width="360">
             </div>
             <div class="description">
 

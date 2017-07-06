@@ -88,7 +88,7 @@
       <div class="col-md-4">
         <div class="content-box-2">
           <figure class="image-box">
-            <img src="../public/images/properties-details/agents-1.jpg" height="278" width="330" alt="">
+            <img src="/images/properties-details/agents-1.jpg" height="278" width="330" alt="">
           </figure>
           <div class="contents">
             <h3 class="heading-style-1">{{$user->fname}} {{$user->lname}}</h3>
@@ -100,7 +100,7 @@
       <div class="col-md-8">
         <div class="content-box-2 agents-contact">
           <div class="heading">
-            <h5>Contact {{$user->fname}} {{$user->lname}}</h5>
+            <h5>Contact {{$user->fname}} {{$user->lname}}  {{$user->role}}</h5>
           </div>
           <form class="form-content pad-top-small" data-parsley-validate>
             <div class="row">
