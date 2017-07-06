@@ -13,6 +13,7 @@ class CreatePropertiesTable extends Migration
     public function up()
     {
         Schema::create('properties', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('category')->index();
             $table->string('description')->index();
             $table->string('location')->index();
