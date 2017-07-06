@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Bid extends Authenticatable
+class Image extends Authenticatable
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Bid extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'title', 'tender_id', 'user_id', 'c_name', 'kra_pin', 'proposal', 'file',
+        'image', 'property_id',
     ];
 
     /**

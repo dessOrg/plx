@@ -20,47 +20,42 @@
       <main id="main" class="main">
      <!-- Properties Filter -->
     <div class="properties-filter">
-    <div class="dropdown filter_menu2">
-      <div class="toggle-prop-menu" data-toggle="dropdown">
-       All Actions
-        <span class="caret"></span>
-      </div>
-      <ul class="dropdown-menu filter_menu">
-       <li role="presentation" data-value="all">All Actions</li>
-       <li role="presentation" data-value="rentals">Rentals (7)</li>
-       <li role="presentation" data-value="sales">Sales (9)</li>
-     </ul>
-    </div>
-    <div class="dropdown filter_menu2">
-      <div class="toggle-prop-menu" data-toggle="dropdown" >
-        City
-        <span class="caret"></span>
-      </div>
-     <ul class="dropdown-menu filter_menu" role="menu">
-      <li role="presentation" data-value="all">All Types</li><li role="presentation" data-value="apartments">Apartments (4)</li><li role="presentation" data-value="condos">Condos (1)</li><li role="presentation" data-value="houses">Houses (2)</li><li role="presentation" data-value="industrial">Industrial (1)</li><li role="presentation" data-value="land">Land (2)</li><li role="presentation" data-value="offices">Offices (1)</li><li role="presentation" data-value="retail">Retail (3)</li><li role="presentation" data-value="villas">Villas (2)</li>
-    </ul>
-    </div>
+      <div class="form-content form-cotent-map">
+        <form class="form-1"  role="form" method="POST" action="{{ url('/image'.$property->id) }}" enctype="multipart/form-data">
+          {{ csrf_field() }}
+            <div class="row pad-top-large">
+              <div class="col-md-3">
+                <p>Upload Image</p>
+              <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                  <input class="form-control" type="file" name="file" required="true">
+
+                    @if ($errors->has('file'))
+                      <span class="help-block">
+                      <strong>{{ $errors->first('file') }}</strong>
+                      </span>
+                    @endif
+              </div>
+              </div>
+            <div class="col-md-5 pad-top-small">
+              <button class="btn btn-dark btn-large pull-right hvr-shutter-out-vertical">Add Image</button>
+            </div>
+
+            </div>
+          </form>
+        </div>
     </div>
     <!-- Properties Filter -->
     <div class="row-float pad-top-large">
       <div class="grid-box-all row">
-        
-          @foreach($properties as $key)
+
+          @foreach($images as $key)
           <div class="grid-box">
             <div class="image ">
-            <span class="box-type"><span class="text">Sale</span></span>
               <img src="..{{ $key->image }}" alt="" height="234" width="360">
             </div>
             <div class="description">
-              <h3><span class="type">{{ $key->category }}:</span>
-              {{ $key->address }},{{ $key->town }}
-              {{ $key->location }}</h3>
-              <p class="meta-list"><span class="meta">Bed : {{ $key->bed }}</span>
-                <span class="meta"> Parking : {{ $key->parking }} </span>
-                <span class="meta">   Bath : {{ $key->bath }} </span>
-                <span class="meta">   {{ $key->size }}</span></p>
-              <span class="price">Ksh.{{ $key->price }}</span>
-              <a class="link-arrow iconic iconic-arrow-forward" href="{{ url('prop'. $key->id) }}"></a>
+
+              <a class="link-arrow iconic" href="{{ url('delimage'. $key->id.'/'.$key->property_id) }}"><i class="fa fa-remove"></i></a>
             </div>
           </div>
           @endforeach

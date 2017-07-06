@@ -245,19 +245,7 @@
 <!-- Content Section -->
 <section class="content-section">
   <div class="container">
-    <div class="title-row heading">
-      <div class="col-xs-12">
-        <h2>Your dream <br>
-        homes</h2>
-        <p>Your search result IS listed here</p>
-        <span class="iconic iconic-search"></span>
-      </div>
-    </div>
     <div class="content-box">
-      <div class="col-md-12">
-      <p class="content-info"><span class="iconic iconic-grid"></span>Grid view</p>
-      </div>
-      <!-- Grid view -->
       <div class="grid-box-all row-float pad-top-large">
         <div class="grid-box wow fadeInUp2" data-wow-delay="500ms">
           <div class="image">

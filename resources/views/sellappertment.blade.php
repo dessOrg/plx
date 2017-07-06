@@ -27,7 +27,7 @@
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
              <select class="form-control" id="location" name="location" required="true" value="{{ old('location') }}" style="">
                <option  value="">Select city</option>
-               <option  value="Mombasa">Co-operate</option>
+               <option  value="Mombasa">Mombasa</option>
                <option  value="Nairobi">Nairobi</option>
                <option  value="Kisumu">Kisumu</option>
 

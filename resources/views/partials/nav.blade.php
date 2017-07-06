@@ -91,7 +91,10 @@
 <li class="menu-item-has-children"><a href="{{ url('/properties')}}">Properties</a>
 <ul class="sub-menu">
 <li><a href="{{ url('/properties')}}">Property List</a></li>
+@if(Auth::guest())
+@elseif(Auth::user()->role === 'Admin')
 <li><a href="{{ url('/pending')}}">Pending Properties</a></li>
+@endif
 </ul>
 </li>
 <li class="menu-item-has-children"><a href="#">Sell</a>

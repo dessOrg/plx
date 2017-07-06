@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use App\Tender;
-use App\Bid;
+use App\Property;
+use App\Image;
 use Validator;
 use Auth;
 use App\Http\Requests;
@@ -32,7 +32,16 @@ $this->get('/index', function () {
 });
 
 $this->get('/properties', function () {
-    return view('properties');
+  $name = Property::where('status','=','Active')->get();
+    return view('properties')->with('properties', $name);
+});
+
+$this->get('/prop{id}', function($id)
+{
+
+   $name = Property::find($id);
+   $user = User::find($name->user_id);
+    return view('property')->with('user', $user)->with('property', $name);
 });
 
 $this->auth();
@@ -44,3 +53,10 @@ $this->post('/addappert', 'IndexController@addappert');
 
 
 $this->get('/pending', 'IndexController@pending');
+$this->get('/verify{id}', 'IndexController@verify');
+$this->get('/editappert{id}', 'IndexController@loadappert');
+$this->post('/editappert{id}', 'IndexController@updateappert');
+$this->get('/del{id}', 'IndexController@deladd');
+$this->get('/image{id}', 'IndexController@loadimage');
+$this->post('/image{id}', 'IndexController@addimage');
+$this->get('/delimage{id}/{p_id}', 'IndexController@delimage');
