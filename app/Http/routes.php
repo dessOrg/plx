@@ -40,8 +40,9 @@ $this->get('/prop{id}', function($id)
 {
 
    $name = Property::find($id);
+   $im = Image::where('property_id','=',$id)->get();
    $user = User::find($name->user_id);
-    return view('property')->with('user', $user)->with('property', $name);
+    return view('property')->with('user', $user)->with('property', $name)->with('images', $im);
 });
 
 $this->auth();
