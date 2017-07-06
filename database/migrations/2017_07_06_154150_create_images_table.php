@@ -16,7 +16,7 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('property_id')->index();
             $table->string('image')->index();
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 

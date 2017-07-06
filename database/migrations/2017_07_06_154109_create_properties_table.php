@@ -27,7 +27,7 @@ class CreatePropertiesTable extends Migration
             $table->string('address')->index();
             $table->string('town')->index();
             $table->string('price')->index();
-            $table->timestamp('created_at');
+            $table->timestamps();
         });
     }
 
