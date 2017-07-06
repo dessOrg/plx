@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLogsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,9 @@ class CreateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->string('title')->index();
-            $table->string('tender_id')->index();
-            $table->string('company_name')->index();
-            $table->string('user_id')->index();
-            $table->string('kra_pin')->index();
+        Schema::create('images', function (Blueprint $table) {
+            $table->string('property_id')->index();
+            $table->string('image')->index();
             $table->timestamp('created_at');
         });
     }
