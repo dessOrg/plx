@@ -51,7 +51,7 @@
             @endif
           @endif
           <div class="heading pad-top-large">
-          <h4>{{ $property->address}} {{ $property->town}}, {{ $property->location}}</h4>
+          <h4>{{ $property->address}} {{ $property->town}}, {{ $property->location}} {{Auth::user()->id}} {{$property->user_id}}</h4>
           </div>
           <div class="pad-top-small">
             <span class="btn btn-primary ">Rent</span>
