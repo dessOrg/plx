@@ -14,6 +14,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_id')->index();
             $table->string('category')->index();
             $table->string('description')->index();
             $table->string('location')->index();
