@@ -87,7 +87,7 @@ class IndexController extends Controller
         $request->file('file')->getClientOriginalExtension();
 
         $request->file('file')->move(
-            base_path() . '/public/uploads', $fileName
+            base_path() . '/uploads', $fileName
         );
 
      $pat = 'uploads/'.$fileName;
@@ -243,7 +243,7 @@ class IndexController extends Controller
        $request->file('file')->getClientOriginalExtension();
 
        $request->file('file')->move(
-           base_path() . '/public/uploads', $fileName
+           base_path() . '/uploads', $fileName
        );
 
     $pat = 'uploads/'.$fileName;

@@ -23,9 +23,9 @@
        <div class="content-back row-float">
        <div class="col-md-6 content-table-image">
        <div class="owlCarousel properties-slider">
-        <div class="item"><img src="/{{ $property->image}}" height="577" width="570" alt=""></div>
+        <div class="item"><img src="/public/{{ $property->image}}" height="577" width="570" alt=""></div>
         @foreach($images as $key)
-        <div class="item"><img class="lazyOwl" src="/{{ $key->image}}" height="577" width="570" alt=""></div>
+        <div class="item"><img class="lazyOwl" src="/public/{{ $key->image}}" height="577" width="570" alt=""></div>
         @endforeach
       </div>
        </div>
@@ -38,7 +38,7 @@
             <a href="{{ url('/verify'.$property->id)}}"><span class="btn btn-default ">Verify</span></a>
             @endif
           </div>
-          @elseif(Auth::user()->role === 'normal')
+          @else
             @if(Auth::user()->id === $property->user_id)
             <div class="pad-top-small">
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
