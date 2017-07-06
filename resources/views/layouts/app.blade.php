@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="../public/css/iconic.css">
-    <script src="../public/js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="/css/iconic.css">
+    <script src="/js/vendor/modernizr.js"></script>
 
 
 </head>
@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <script src="../public/js/vendor/vendor.js"></script>
-<script src="../public/js/main.js"></script>
+  <script src="/js/vendor/vendor.js"></script>
+<script src="/js/main.js"></script>
 
   <script>
   $(function() {

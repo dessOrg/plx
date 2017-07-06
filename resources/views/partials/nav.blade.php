@@ -75,12 +75,12 @@
 
 <div class="wrap">
 <!-- Header  -->
-<header class="main-header header-common" style="background-image: url(../public/images/banner-1.jpg);">
+<header class="main-header header-common" style="background-image: url(/images/banner-1.jpg);">
 
 <div class="header-content">
 <div class="navigation-bar"><div class="container">
 <div class="logo wow flipInX" data-wow-delay="200ms">
-<a href="{{ url('/')}}"><img src="../public/images/logo.png" height="120" width="100" alt=""></a>
+<a href="{{ url('/')}}"><img src="/images/logo.png" height="120" width="100" alt=""></a>
 </div>
 <div class="navigation">
 <a href="#" class="navigation-button" id="mobileNav">
