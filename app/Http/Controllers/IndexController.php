@@ -83,17 +83,18 @@ class IndexController extends Controller
      $property->description     = Input::get('description');
      $property->user_id     = Auth::user()->id;
 
-     $imageName = time().'.'.$request->file->getClientOriginalExtension();
-        $im = $request->file('file');
-        $imageName = Storage::disk('s3')->url($imageName);
-        $t = Storage::disk('s3')->put($imageName, file_get_contents($im), 'public');
-      $propert->image = $t;
+
+             $imageName = time().'.'.$request->file->getClientOriginalExtension();
+             $image = $request->file('file');
+             $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
+             $imageName = Storage::disk('s3')->url($imageName);
+      $propert->image = $imageName;
       $property->save();
 
 
         $imag = new Image();
         $imag->property_id = $property->id;
-        $imag->image = $t;
+        $imag->image = $imageName;
         $imag->save();
 
      // save report
