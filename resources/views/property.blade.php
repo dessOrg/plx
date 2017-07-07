@@ -11,7 +11,7 @@
           <li><a href="#">Search page</a></li>
           <li class="active">Selected property</li>
     </ol>
-    @if(Auth->guest())
+    @if(Auth::guest())
     @elseif(Auth::user()->role === 'normal')
     @if($property->status === 'pending')
     <div class="title-row heading">
