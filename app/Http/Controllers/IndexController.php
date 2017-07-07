@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Mail;
 use SMSProvider;
+use Storage;
 
 class IndexController extends Controller
 {
@@ -46,6 +47,7 @@ class IndexController extends Controller
            'address' => 'required|max:100',
            'town' => 'required|max:200',
            'size' => 'required|max:100',
+           'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
        );
 
        $validator = Validator::make(Input::all(), $rules);
@@ -80,27 +82,19 @@ class IndexController extends Controller
      $property->status     = 'pending';
      $property->description     = Input::get('description');
      $property->user_id     = Auth::user()->id;
-     $property->image     = $request->file;
+
+     $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $im = $request->file('file');
+        $t = Storage::disk('s3')->put($imageName, file_get_contents($im), 'public');
+        $imageName = Storage::disk('s3')->url($imageName);
+      $propert->image = $imageName;
       $property->save();
 
-        $fileName = $property->id . '.' .
-        $request->file('file')->getClientOriginalExtension();
 
-        $request->file('file')->move(
-            base_path() . '/uploads', $fileName
-        );
-
-     $pat = 'uploads/'.$fileName;
-
-        $prop_obj = new Property();
-        $prop_obj->id = $property->id;
-        $prop = Property::find($prop_obj->id); // Eloquent Model
-        $prop->update(['image' => $pat]);
-
-        $image = new Image();
-        $image->property_id = $property->id;
-        $image->image = $pat;
-        $image->save();
+        $imag = new Image();
+        $imag->property_id = $property->id;
+        $imag->image = $imageName;
+        $imag->save();
 
      // save report
 

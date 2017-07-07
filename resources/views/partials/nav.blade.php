@@ -10,63 +10,9 @@
 <li><a href="property-details.html">Property Details</a></li>
 </ul>
 </li>
-<li class="menu-item-has-children"><a href="#">Pages</a>
-<ul class="sub-menu">
-    <li><a href="page-layout-left-sidebar.html">Sidebar Left</a></li>
-    <li><a href="page-layout-right-sidebar.html">Sidebar Right</a></li>
-  </ul>
-</li>
-<li class="menu-item-has-children"><a href="#">Blog</a>
-<ul class="sub-menu">
-  <li><a href="#">Blog List</a>
-  <ul class="dir-right">
-    <li><a href="blog.html">Masonory Layout</a></li>
-    <li><a href="blog-list-row.html">Single Row Layout</a></li>
-  </ul>
-  </li>
-  <li><a href="#">Blog Single Page</a>
-   <ul class="dir-right">
-    <li><a href="blog-details.html">With image</a></li>
-    <li><a href="blog-details-video.html">With Video</a></li>
-  </ul>
-  </li>
-</ul>
-</li>
 <li><a href="agents.html">Agents</a>
 <ul>
 <li><a href="agents-details.html">Agent Details</a></li>
-</ul>
-</li>
-<li class="menu-item-has-children"><a href="#">ShortCodes</a>
-<ul class="sub-menu">
-<li><a href="#">Typography And Components</a>
-  <ul class="dir-right">
-    <li><a href="page-typography.html">General Typography</a></li>
-    <li><a href="page-heading.html">Heading</a></li>
-    <li><a href="page-blockquote.html">Blockquote</a></li>
-    <li><a href="page-boxshadow.html">Box Shadow</a></li>
-    <li><a href="page-testimonials.html">Testimonials</a></li>
-    <li><a href="page-tagline.html">Tagline Boxes</a></li>
-    <li><a href="page-grid-layout.html">Grid Layout</a></li>
-  </ul>
-</li>
-<li><a href="page-buttons.html">Buttons UI</a>
-</li>
-<li><a href="page-icons.html">Icons</a>
-</li>
-</ul>
-</li>
-<li class="menu-item-has-children"><a href="#">Misc</a>
-<ul class="dir-right level-1 sub-menu">
-<li><a href="#">Header</a>
-<ul class="dir-right">
-  <li><a href="header-v1.html">Header v1</a></li>
-   <li><a href="header-v2.html">Header v2</a></li>
-   <li><a href="banner-slider.html">Header Slider v1</a></li>
-   <li><a href="banner-slider-with-caption.html">Header Slider v2</a></li>
-</ul>
-</li>
-<li><a href="page-footer-v1.html">Foot</a></li>
 </ul>
 </li>
 </ul>

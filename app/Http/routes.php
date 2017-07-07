@@ -12,6 +12,7 @@ use Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Mail;
+use Storage;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
