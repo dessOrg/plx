@@ -8,7 +8,7 @@
  <div class=" row-float" id="map-cotnent2">
   <div class="map-search-form row-float" style="padding-top:1px; " >
   <div class="container">
-    <h2>Post Property Add</h2>
+    <h2>Post Property Ads</h2>
 
     <div class="form-content form-cotent-map">
       <form class="form-1"  role="form" method="POST" action="{{ url('/addplot') }}" enctype="multipart/form-data">

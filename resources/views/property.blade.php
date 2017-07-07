@@ -43,7 +43,11 @@
 
             @if($property->user_id == Auth::user()->id)
             <div class="pad-top-small">
+              @if($property->category === 'Plot')
+              <a href="{{ url('/editplot'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
+              @lse
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
+              @endif
               <a href="{{ url('/image'.$property->id)}}"><span class="btn btn-default ">Add Images</span></a>
               <a href="{{ url('/del'.$property->id)}}"><span class="btn btn-danger "><i class="fa fa-remove"></i></span></a>
               @if($property->status === 'Active')
