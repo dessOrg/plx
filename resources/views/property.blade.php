@@ -11,6 +11,8 @@
           <li><a href="#">Search page</a></li>
           <li class="active">Selected property</li>
     </ol>
+    @if(Auth->guest())
+    @elseif(Auth::user()->role === 'normal')
     @if($property->status === 'pending')
     <div class="title-row heading">
       <div class="col-md-12">
@@ -83,6 +85,7 @@
 
       </div>
     </div>
+    @endif
     @endif
     <!-- Properties  Details -->
     <div class="row pad-top-large">

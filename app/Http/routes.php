@@ -29,7 +29,8 @@ $this->get('/', function () {
 });
 
 $this->get('/index', function () {
-    return view('home');
+  $name = Property::where('status','=','Active')->get();
+    return view('home')->with('properties', $name);
 });
 
 $this->get('/properties', function () {
@@ -54,7 +55,7 @@ $this->get('/agents', function () {
 $this->get('/agent{id}', function($id)
 {
 
-   $name = Property::where('user_id','=',$id);
+   $name = Property::where('user_id','=',$id)->get();
    $user = User::find($id);
     return view('agent')->with('agent', $user)->with('properties', $name);
 });
