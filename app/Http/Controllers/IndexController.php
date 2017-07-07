@@ -207,7 +207,7 @@ class IndexController extends Controller
 
  protected function addimage(Request $request, $id) {
   $rules = array(
-
+'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
       );
 
       $validator = Validator::make(Input::all(), $rules);
@@ -229,24 +229,17 @@ class IndexController extends Controller
     // let him enter the database
 
     // create the data for report
-    $image= new Image;
-    $image->property_id = $id;
-    $image->image     = $request->file;
-    $image->save();
+    $imag= new Image;
+    $imag->property_id = $id;
 
-       $fileName = $image->id . '.' .
-       $request->file('file')->getClientOriginalExtension();
+    $image = $request->file('file');
+     $imageName = time().'.'.$request->file('file')->getClientOriginalExtension();
+     $s3 = \Storage::disk('s3');
+     $filePath = '/plx254/' . $imageName;
+     $s3->put($filePath, file_get_contents($image), 'public');
 
-       $request->file('file')->move(
-           base_path() . '/uploads', $fileName
-       );
-
-    $pat = 'uploads/'.$fileName;
-
-       $prop_obj = new Image();
-       $prop_obj->id = $image->id;
-       $prop = Image::find($prop_obj->id); // Eloquent Model
-       $prop->update(['image' => $pat]);
+     $imag->image     = $filePath;
+     $imag->save();
 
     // save report
 
