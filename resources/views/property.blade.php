@@ -32,14 +32,14 @@
         <div class="col-md-6 pull-right contents grid-gap-large">
           @if(Auth::guest())
           @else
-          @if(Auth::user()->role === 'Admin')
+           @if(Auth::user()->role === 'Admin')
           <div class="pad-top-small">
             <a href="{{ url('/block'.$property->id)}}"><span class="btn btn-primary ">Block</span></a>
             @if($property->status === "pending")
             <a href="{{ url('/verify'.$property->id)}}"><span class="btn btn-default ">Verify</span></a>
             @endif
           </div>
-          @else
+           @else
             @if(Auth::user()->id === $property->user_id)
             <div class="pad-top-small">
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
@@ -53,7 +53,7 @@
           @endif
           @endif
           <div class="heading pad-top-large">
-          <h4>{{ $property->address}} {{ $property->town}}, {{ $property->location}} {{Auth::user()->id}} {{$property->user_id}}</h4>
+          <h4>{{ $property->address}} {{ $property->town}}, {{ $property->location}} </h4>
           </div>
           <div class="pad-top-small">
             <span class="btn btn-primary ">Rent</span>
