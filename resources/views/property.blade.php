@@ -40,7 +40,7 @@
             @endif
           </div>
            @else
-            @if($property->user_id === Auth::user()->id)
+            
             <div class="pad-top-small">
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
               <a href="{{ url('/image'.$property->id)}}"><span class="btn btn-default ">Add Images</span></a>
@@ -49,7 +49,7 @@
               <a href="{{ url('/sold'.$property->id)}}"><span class="btn btn-default ">Mark As Sold</span>{{$property->user_id}}{{Auth::user()->id}}</a>
               @endif
             </div>
-            @endif
+
           @endif
           @endif
           <div class="heading pad-top-large">
