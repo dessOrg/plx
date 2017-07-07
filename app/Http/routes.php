@@ -47,7 +47,7 @@ $this->get('/prop{id}', function($id)
 });
 
 $this->get('/agents', function () {
-  $name = User::where('normal','=','normal')->get();
+  $name = User::where('role','=','normal')->get();
     return view('agents')->with('agents', $name);
 });
 
