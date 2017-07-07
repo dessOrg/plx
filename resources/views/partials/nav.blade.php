@@ -38,8 +38,10 @@
 <ul class="sub-menu">
 <li><a href="{{ url('/properties')}}">Property List</a></li>
 @if(Auth::guest())
-@elseif(Auth::user()->role === 'Admin')
+@else
+@if(Auth::user()->role === 'Admin')
 <li><a href="{{ url('/pending')}}">Pending Properties</a></li>
+@endif
 @endif
 </ul>
 </li>

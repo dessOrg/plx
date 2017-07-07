@@ -31,7 +31,8 @@
        </div>
         <div class="col-md-6 pull-right contents grid-gap-large">
           @if(Auth::guest())
-          @elseif(Auth::user()->role === 'Admin')
+          @else
+          @if(Auth::user()->role === 'Admin')
           <div class="pad-top-small">
             <a href="{{ url('/block'.$property->id)}}"><span class="btn btn-primary ">Block</span></a>
             @if($property->status === "pending")
@@ -49,6 +50,7 @@
               @endif
             </div>
             @endif
+          @endif
           @endif
           <div class="heading pad-top-large">
           <h4>{{ $property->address}} {{ $property->town}}, {{ $property->location}} {{Auth::user()->id}} {{$property->user_id}}</h4>
@@ -100,7 +102,7 @@
       <div class="col-md-8">
         <div class="content-box-2 agents-contact">
           <div class="heading">
-            <h5>Contact {{$user->fname}} {{$user->lname}}  {{$user->role}}</h5>
+            <h5>Contact {{$user->fname}} {{$user->lname}}  </h5>
           </div>
           <form class="form-content pad-top-small" data-parsley-validate>
             <div class="row">
