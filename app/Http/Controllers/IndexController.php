@@ -85,16 +85,16 @@ class IndexController extends Controller
 
 
              $imageName = time().'.'.$request->image->getClientOriginalExtension();
-             $image = $request->file('image');
-             $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
-             $imageName = Storage::disk('s3')->url($imageName);
-      $propert->image = $imageName;
+             $s3 = \Storage::disk('s3');
+             $filePath = '/plx254/' . $imageFileName;
+             $s3->put($filePath, file_get_contents($image), 'public');
+      $propert->image = $filePath;
       $property->save();
 
 
         $imag = new Image();
         $imag->property_id = $property->id;
-        $imag->image = $imageName;
+        $imag->image = $filePath;
         $imag->save();
 
      // save report
