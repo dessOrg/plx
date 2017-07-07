@@ -52,13 +52,17 @@ $this->get('/home', 'HomeController@index');
 
 $this->get('/sellappertment', 'IndexController@sellappertment');
 $this->post('/addappert', 'IndexController@addappert');
-
-
-$this->get('/pending', 'IndexController@pending');
-$this->get('/verify{id}', 'IndexController@verify');
+$this->get('/sellplot', 'IndexController@sellplot');
+$this->post('/addplot', 'IndexController@addplot');
 $this->get('/editappert{id}', 'IndexController@loadappert');
 $this->post('/editappert{id}', 'IndexController@updateappert');
+$this->get('/editplot{id}', 'IndexController@loadplot');
+$this->post('/editplot{id}', 'IndexController@updateplot');
 $this->get('/del{id}', 'IndexController@deladd');
 $this->get('/image{id}', 'IndexController@loadimage');
 $this->post('/image{id}', 'IndexController@addimage');
 $this->get('/delimage{id}/{p_id}', 'IndexController@delimage');
+
+
+$this->get('/pending', 'IndexController@pending');
+$this->get('/verify{id}', 'IndexController@verify');

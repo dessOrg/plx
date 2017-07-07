@@ -38,6 +38,11 @@ class IndexController extends Controller
        return view('sellappertment');
    }
 
+   public function sellplot()
+   {
+
+       return view('sellplot');
+   }
 
   protected function addappert(Request $request) {
    $rules = array(
@@ -107,6 +112,74 @@ class IndexController extends Controller
 
   }
 
+ protected function addplot(Request $request) {
+  $rules = array(
+          'price' => 'required|max:200',
+          'description' => 'required|max:300',
+          'address' => 'required|max:100',
+          'town' => 'required|max:200',
+          'size' => 'required|max:100',
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      );
+
+      $validator = Validator::make(Input::all(), $rules);
+
+ // check if the validator failed -----------------------
+ if ($validator->fails()) {
+
+    // get the error messages from the validator
+    $messages = $validator->messages();
+
+    // redirect our user back to the form with the errors from the validator
+    return Redirect::to('/sellplot')
+        ->withErrors($validator);
+
+ } else {
+    // validation successful ---------------------------
+
+    // report has passed all tests!
+    // let him enter the database
+
+    // create the data for report
+    $property= new Property;
+    $property->category     = "Plot";
+    $property->address     = Input::get('address');
+    $property->town     = Input::get('town');
+    $property->location     = Input::get('location');
+    $property->price     = Input::get('price');
+    $property->bed    = "0";
+    $property->bath     = "0";
+    $property->parking     = "0";
+    $property->size     = Input::get('size');
+    $property->status     = 'pending';
+    $property->description     = Input::get('description');
+    $property->user_id     = Auth::user()->id;
+
+           $image = $request->file('image');
+            $imageName = time().'.'.$request->file('image')->getClientOriginalExtension();
+            $s3 = \Storage::disk('s3');
+            $filePath = '/plx254/' . $imageName;
+            $s3->put($filePath, file_get_contents($image), 'public');
+     $property->image = $filePath;
+     $property->save();
+
+
+       $imag = new Image();
+       $imag->property_id = $property->id;
+       $imag->image = $filePath;
+       $imag->save();
+
+    // save report
+
+
+    // redirect ----------------------------------------
+    // redirect our user back to the form so they can do it all over again
+    return Redirect::to('/prop'.$property->id);
+  }
+
+ }
+
+
   public function pending()
   {
 
@@ -131,6 +204,12 @@ class IndexController extends Controller
     return view('/update')->with('property', $post);
   }
 
+  public function loadplot($id)
+  {
+
+    $post = Property::find($id);
+    return view('/updateplot')->with('property', $post);
+  }
 
  protected function updateappert(Request $request, $id) {
   $rules = array(
@@ -188,6 +267,60 @@ class IndexController extends Controller
   }
 
  }
+
+protected function updateplot(Request $request, $id) {
+ $rules = array(
+
+         'price' => 'required|max:200',
+         'description' => 'required|max:300',
+         'address' => 'required|max:100',
+         'town' => 'required|max:200',
+         'size' => 'required|max:100',
+     );
+
+     $validator = Validator::make(Input::all(), $rules);
+
+// check if the validator failed -----------------------
+if ($validator->fails()) {
+
+   // get the error messages from the validator
+   $messages = $validator->messages();
+
+   // redirect our user back to the form with the errors from the validator
+   return Redirect::to('/editplot'.$id)
+       ->withErrors($validator);
+
+} else {
+   // validation successful ---------------------------
+
+   // report has passed all tests!
+   // let him enter the database
+
+   // create the data for report
+
+   $address     = Input::get('address');
+   $town     = Input::get('town');
+   $location     = Input::get('location');
+   $price     = Input::get('price');
+   $size     = Input::get('size');
+   $description     = Input::get('description');
+   $user_id     = Auth::user()->id;
+
+      $prop_obj = new Property();
+      $prop_obj->id = $id;
+      $prop = Property::find($prop_obj->id); // Eloquent Model
+      $prop->update(['address' => $address, 'town' => $town, 'location' => $location, 'price' => $price, 'size' => $size, 'description' => $description ]);
+
+   // save report
+
+
+   // redirect ----------------------------------------
+   // redirect our user back to the form so they can do it all over again
+   return Redirect::to('/prop'.$id);
+ }
+
+}
+
 
   protected function deladd($id) {
 

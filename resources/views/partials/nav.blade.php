@@ -47,7 +47,7 @@
 </li>
 <li class="menu-item-has-children"><a href="#">Sell</a>
 <ul class="sub-menu">
-  <li><a href="{{ url('/sellappertment')}}">Plot</a></li>
+  <li><a href="{{ url('/sellplot')}}">Plot</a></li>
   <li><a href="{{ url('/sellappertment')}}">Appertment/House</a></li>
 </ul>
 </li>
@@ -70,25 +70,6 @@
 <li><a href="agents.html">Agents</a>
 <ul>
 <li><a href="agents-details.html">Agent Details</a></li>
-</ul>
-</li>
-<li class="menu-item-has-children"><a href="#">ShortCodes</a>
-<ul class="sub-menu">
-<li><a href="#">Typography And Components</a>
-<ul class="dir-right">
-  <li><a href="page-typography.html">General Typography</a></li>
-  <li><a href="page-heading.html">Heading</a></li>
-  <li><a href="page-blockquote.html">Blockquote</a></li>
-  <li><a href="page-boxshadow.html">Box Shadow</a></li>
-  <li><a href="page-testimonials.html">Testimonials</a></li>
-  <li><a href="page-tagline.html">Tagline Boxes</a></li>
-  <li><a href="page-grid-layout.html">Grid Layout</a></li>
-</ul>
-</li>
-<li><a href="page-buttons.html">Buttons UI</a>
-</li>
-<li><a href="page-icons.html">Icons</a>
-</li>
 </ul>
 </li>
 @if(Auth::guest())
