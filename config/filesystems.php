@@ -58,7 +58,7 @@ return [
             'driver' => 's3',
             'key' => 'AKIAINYGPASRTZLCBDMQ',
             'secret' => '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',
-            'region' => 'UK',
+            'region' => 'EU(London)',
             'bucket' => 'plx254',
         ],
 
