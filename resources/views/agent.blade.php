@@ -34,7 +34,7 @@
         <div class="project">
           <div class="data">
           <a href="#">
-          <img src="{{ $key->image}}" height="205" width="262" alt="">
+          <img src="https://s3.eu-west-2.amazonaws.com/plx254{{ $key->image}}" height="205" width="262" alt="">
           <span class="meta-list3">
             <span class="title">{{ $key->address}} {{$key->town}}</span>
             <span class="status sold">Sold</span>
