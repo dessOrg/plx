@@ -48,7 +48,7 @@
         <div class="grid-box">
           <div class="image ">
           <span class="box-type"><span class="text">Sale</span></span>
-            <img src="/{{ $key->image }}" alt="" height="234" width="360">
+            <img src="https://s3.eu-west-2.amazonaws.com/plx254{{ $key->image }}" alt="" height="234" width="360">
           </div>
           <div class="description">
             <h3><span class="type">{{ $key->category }}:</span>
@@ -138,11 +138,11 @@
       <h4>Contact</h4>
         <div class="widget-content">
          <p>
+           Email: <a href="mailto:info@example.com" class="">info@example.com</a>
           25, dapibus Street, velit <br>
           California, US <br>
           Phone: 900 123 3456 <br>
           Fax: 900 123 3456 <br>
-          Email: <a href="mailto:info@example.com" class="">info@example.com</a>
          </p>
         </div>
       </div>

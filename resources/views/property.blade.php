@@ -23,9 +23,9 @@
        <div class="content-back row-float">
        <div class="col-md-6 content-table-image">
        <div class="owlCarousel properties-slider">
-        <div class="item"><img src="https://s3.eu-west-2.amazonaws.com/{{ $property->image}}" height="577" width="570" alt=""></div>
+        <div class="item"><img src="https://s3.eu-west-2.amazonaws.com/plx254{{ $property->image}}" height="577" width="570" alt=""></div>
         @foreach($images as $key)
-        <div class="item"><img class="lazyOwl" src="https://s3.eu-west-2.amazonaws.com/{{ $key->image}}" height="577" width="570" alt=""></div>
+        <div class="item"><img class="lazyOwl" src="https://s3.eu-west-2.amazonaws.com/plx254{{ $key->image}}" height="577" width="570" alt=""></div>
         @endforeach
       </div>
        </div>
