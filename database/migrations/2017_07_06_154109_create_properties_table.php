@@ -28,7 +28,7 @@ class CreatePropertiesTable extends Migration
             $table->string('town')->index();
             $table->string('price')->index();
             $table->string('phoneno')->index();
-            $table->string('code')->unique();
+            $table->string('code')->index();
             $table->string('pay')->index();
             $table->timestamps();
         });
