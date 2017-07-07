@@ -321,6 +321,50 @@ if ($validator->fails()) {
 
 }
 
+protected function pay(Request $request) {
+$rules = array(
+        'code' => 'required|min:10|max:11',
+        'phoneno' => 'required|min:12|max:13',
+    );
+
+    $validator = Validator::make(Input::all(), $rules);
+
+// check if the validator failed -----------------------
+if ($validator->fails()) {
+
+  // get the error messages from the validator
+  $messages = $validator->messages();
+  $id     = Input::get('property_id');
+  // redirect our user back to the form with the errors from the validator
+  return Redirect::to('/prop'.$id)
+      ->withErrors($validator);
+
+} else {
+  // validation successful ---------------------------
+
+  // report has passed all tests!
+  // let him enter the database
+  $id     = Input::get('property_id');
+  // create the data for report
+
+  $code     = Input::get('code');
+  $phoneno     = Input::get('phoneno');
+
+     $prop_obj = new Property();
+     $prop_obj->id = $id;
+     $prop = Property::find($prop_obj->id); // Eloquent Model
+     $prop->update(['code' => $code, 'phoneno' => $phoneno, 'pay' => '1']);
+
+  // save report
+
+
+  // redirect ----------------------------------------
+  // redirect our user back to the form so they can do it all over again
+  return Redirect::to('/prop'.$id);
+}
+
+}
+
 
   protected function deladd($id) {
 

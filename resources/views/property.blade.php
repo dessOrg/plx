@@ -11,12 +11,79 @@
           <li><a href="#">Search page</a></li>
           <li class="active">Selected property</li>
     </ol>
+    @if($property->status === 'pending')
     <div class="title-row heading">
       <div class="col-md-12">
-        <h1>Truly Modern Living</h1>
-        <p>in your city just click on the availabe icons</p>
+        <div class="col-md-6">
+        <h3>One More Step. </h3>
+        <ul>
+          <li>Go to Mpesa menu</li>
+          <li>Lipa Na mpesa.</li>
+          <li>Buy Goods</li>
+          <li>Enter Till No: <em>123456</em></li>
+          <li>Enter Amount : Ksh. 2000</li>
+          <li>Then Paste your Mpesa code on the payment form.</li>
+          <li>Enter the phone No you used to pay.</li>
+          <li>Hit submit and wait for the verifications.</li>
+          <li>Your ad will be live after verifications.</li>
+          <li>Cheers!!!</li>
+        </ul>
+        <h3>Remember Wrong submission of details or underpayment could lead to immediate blocking of your account.</h3>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">PAYMENT FORM</div>
+                <div class="panel-body">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/pay') }}">
+                        {{ csrf_field() }}
+
+                        <div class="form-group{{ $errors->has('code') ? ' has-error' : '' }}">
+                            <label for="code" class="col-md-4 control-label">M-Pesa Code</label>
+
+                            <div class="col-md-6">
+                                <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}">
+                                <input id="property_id" type="hidden" class="form-control" name="property_id" value="{{ $property->id }}">
+
+                                @if ($errors->has('code'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('code') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('phoneno') ? ' has-error' : '' }}">
+                            <label for="phoneno" class="col-md-4 control-label">Mobile No:</label>
+
+                            <div class="col-md-6">
+                                <input id="phoneno" type="text" class="form-control" name="phoneno" value="{{ old('phoneno') }}">
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phoneno') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-sign-in"></i> SUBMIT
+                                </button>
+
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
       </div>
     </div>
+    @endif
     <!-- Properties  Details -->
     <div class="row pad-top-large">
     <div class="col-sm-12 content-table">
