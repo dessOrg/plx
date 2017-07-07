@@ -121,9 +121,9 @@
               </div>
                 <div class="col-md-3">
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <input class="form-control" type="file" name="file" required="true">
+                    <input class="form-control" type="file" name="image" required="true">
 
-                      @if ($errors->has('file'))
+                      @if ($errors->has('image'))
                         <span class="help-block">
                         <strong>{{ $errors->first('file') }}</strong>
                         </span>

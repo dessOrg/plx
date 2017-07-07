@@ -47,7 +47,7 @@ class IndexController extends Controller
            'address' => 'required|max:100',
            'town' => 'required|max:200',
            'size' => 'required|max:100',
-           'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
        );
 
        $validator = Validator::make(Input::all(), $rules);
@@ -84,8 +84,8 @@ class IndexController extends Controller
      $property->user_id     = Auth::user()->id;
 
 
-             $imageName = time().'.'.$request->file->getClientOriginalExtension();
-             $image = $request->file('file');
+             $imageName = time().'.'.$request->image->getClientOriginalExtension();
+             $image = $request->file('image');
              $t = Storage::disk('s3')->put($imageName, file_get_contents($image), 'public');
              $imageName = Storage::disk('s3')->url($imageName);
       $propert->image = $imageName;
