@@ -86,7 +86,7 @@ class IndexController extends Controller
 
              $imageName = time().'.'.$request->image->getClientOriginalExtension();
              $s3 = \Storage::disk('s3');
-             $filePath = '/plx254/' . $imageFileName;
+             $filePath = '/plx254/' . $imageName;
              $s3->put($filePath, file_get_contents($image), 'public');
       $propert->image = $filePath;
       $property->save();
