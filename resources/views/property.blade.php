@@ -14,6 +14,7 @@
     @if(Auth::guest())
     @elseif(Auth::user()->role === 'normal')
     @if($property->status === 'pending')
+    @if($property->pay === '0')
     <div class="title-row heading">
       <div class="col-md-12">
         <div class="col-md-6">
@@ -30,7 +31,7 @@
           <li>Your ad will be live after verifications.</li>
           <li>Cheers!!!</li>
         </ul>
-        <h3>Remember Wrong submission of details or underpayment could lead to immediate blocking of your account.</h3>
+        <h5>Remember Wrong submission of details or underpayment could lead to immediate blocking of your account.</h5>
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -85,6 +86,13 @@
 
       </div>
     </div>
+    @else
+    <div class="title-row heading">
+      <div class="col-md-12" style="color:green;">
+       <p>Your payment has been received and is being processed. It may take a while.</p>
+      </div>
+    </div>
+    @endif
     @endif
     @endif
     <!-- Properties  Details -->
@@ -109,6 +117,7 @@
             <a href="{{ url('/verify'.$property->id)}}"><span class="btn btn-default ">Verify</span></a>
             @endif
           </div>
+          <div>Mpesa code:{{$property->code}}, Phone No:{{$property->phoneno}}</div>
           @endif
 
             @if($property->user_id == Auth::user()->id)
