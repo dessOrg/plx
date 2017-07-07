@@ -86,6 +86,8 @@ class IndexController extends Controller
      $property->size     = Input::get('size');
      $property->status     = 'pending';
      $property->description     = Input::get('description');
+     $property->phoneno     = "0";
+     $property->code     = "k";
      $property->user_id     = Auth::user()->id;
 
             $image = $request->file('image');
@@ -153,6 +155,8 @@ class IndexController extends Controller
     $property->size     = Input::get('size');
     $property->status     = 'pending';
     $property->description     = Input::get('description');
+    $property->phoneno     = "0";
+    $property->code     = "k";
     $property->user_id     = Auth::user()->id;
 
            $image = $request->file('image');
@@ -251,6 +255,7 @@ class IndexController extends Controller
     $parking     = Input::get('parking');
     $size     = Input::get('size');
     $description     = Input::get('description');
+
     $user_id     = Auth::user()->id;
 
        $prop_obj = new Property();

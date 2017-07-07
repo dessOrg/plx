@@ -46,6 +46,19 @@ $this->get('/prop{id}', function($id)
     return view('property')->with('user', $user)->with('property', $name)->with('images', $im);
 });
 
+$this->get('/agents', function () {
+  $name = User::where('normal','=','normal')->get();
+    return view('agents')->with('agents', $name);
+});
+
+$this->get('/agent{id}', function($id)
+{
+
+   $name = Property::where('user_id','=',$id);
+   $user = User::find($id);
+    return view('agent')->with('user', $user)->with('properties', $name);
+});
+
 $this->auth();
 
 $this->get('/home', 'HomeController@index');
