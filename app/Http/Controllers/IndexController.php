@@ -83,7 +83,7 @@ class IndexController extends Controller
      $property->description     = Input::get('description');
      $property->user_id     = Auth::user()->id;
 
-
+            $image = $request->file('image');
              $imageName = time().'.'.$request->image->getClientOriginalExtension();
              $s3 = \Storage::disk('s3');
              $filePath = '/plx254/' . $imageName;
