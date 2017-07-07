@@ -41,7 +41,7 @@
           </div>
           @endif
 
-            @if($property->user_id === Auth::user()->id)
+            @if($property->user_id == Auth::user()->id)
             <div class="pad-top-small">
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
               <a href="{{ url('/image'.$property->id)}}"><span class="btn btn-default ">Add Images</span></a>
