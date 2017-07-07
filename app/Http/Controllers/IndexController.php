@@ -356,11 +356,11 @@ if ($validator->fails()) {
 
   $code     = Input::get('code');
   $phoneno     = Input::get('phoneno');
-
+   $pay    = "1";
      $prop_obj = new Property();
      $prop_obj->id = $id;
      $prop = Property::find($prop_obj->id); // Eloquent Model
-     $prop->update(['code' => $code, 'phoneno' => $phoneno, 'pay' => '1']);
+     $prop->update(['code' => $code, 'phoneno' => $phoneno, 'pay' => $pay]);
 
   // save report
 

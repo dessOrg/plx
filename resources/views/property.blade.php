@@ -61,7 +61,7 @@
                             <div class="col-md-6">
                                 <input id="phoneno" type="text" class="form-control" name="phoneno" value="{{ old('phoneno') }}">
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('phoneno'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('phoneno') }}</strong>
                                     </span>
