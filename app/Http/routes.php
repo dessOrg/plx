@@ -56,7 +56,7 @@ $this->get('/agent{id}', function($id)
 
    $name = Property::where('user_id','=',$id);
    $user = User::find($id);
-    return view('agent')->with('user', $user)->with('properties', $name);
+    return view('agent')->with('agent', $user)->with('properties', $name);
 });
 
 $this->auth();

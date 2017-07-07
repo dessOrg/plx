@@ -22,7 +22,7 @@
               <div class="meta">
                 <h2><a class="" href="{{url('/agent'.$key->id)}}">{{ $key->fname}} {{ $key->lname}}</a></h2>
                 <p></p>
-                <p class="text-right"><a href="{{url('/agent'.$key->id)}}" class="iconic "><i class="fa fa-arrow"></i></a></p>
+                <p class="text-right"><a href="{{url('/agent'.$key->id)}}" class="iconic "><i class="fa fa-forward"></i></a></p>
               </div>
           </div>
         </div>
