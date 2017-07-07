@@ -88,6 +88,7 @@ class IndexController extends Controller
      $property->description     = Input::get('description');
      $property->phoneno     = "0";
      $property->code     = "k";
+     $property->pay     = "0";
      $property->user_id     = Auth::user()->id;
 
             $image = $request->file('image');
@@ -157,6 +158,7 @@ class IndexController extends Controller
     $property->description     = Input::get('description');
     $property->phoneno     = "0";
     $property->code     = "k";
+    $property->pay     = "0";
     $property->user_id     = Auth::user()->id;
 
            $image = $request->file('image');
