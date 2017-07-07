@@ -265,7 +265,7 @@
             <a class="link-arrow iconic iconic-arrow-forward" href="{{url('/prop'.$key->id)}}"></a>
           </div>
         </div>
-        @foreach
+        @endforeach
 
       </div>
       <!-- Grid view // -->
