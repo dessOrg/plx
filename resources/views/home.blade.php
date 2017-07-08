@@ -7,7 +7,7 @@
 <div class="search-interaction row-float">
  <a class="tab row-float collapsed" data-toggle="collapse" href="#map-cotnent2">
  <span class="container">
- Search Property <span class="iconic  pull-right"></span>
+ Search Property <span class="iconic  pull-right"><i class="fa fa-search"></i></span>
  </span>
  </a>
  <!-- Map Search -->

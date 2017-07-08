@@ -45,7 +45,6 @@
 
                             <div class="col-md-6">
                                 <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}">
-                                <input id="property_id" type="hidden" class="form-control" name="property_id" value="{{ $property->id }}">
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
@@ -122,7 +121,7 @@
 
             @if($property->user_id == Auth::user()->id)
             <div class="pad-top-small">
-              @if($property->category === 'Plot')
+              @if($property->category == 'Plot')
               <a href="{{ url('/editplot'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
               @lse
               <a href="{{ url('/editappert'.$property->id)}}"><span class="btn btn-primary "><i class="fa fa-edit"></i></span></a>
