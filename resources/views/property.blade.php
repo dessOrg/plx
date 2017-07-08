@@ -37,7 +37,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">PAYMENT FORM</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/pay') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/pay'.$property->id) }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('code') ? ' has-error' : '' }}">

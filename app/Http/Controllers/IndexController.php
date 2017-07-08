@@ -328,7 +328,7 @@ if ($validator->fails()) {
 
 }
 
-protected function pay(Request $request) {
+protected function pay(Request $request, $id) {
 $rules = array(
         'code' => 'required|min:10|max:11',
         'phoneno' => 'required|min:12|max:13',
@@ -341,7 +341,7 @@ if ($validator->fails()) {
 
   // get the error messages from the validator
   $messages = $validator->messages();
-  $id     = Input::get('property_id');
+
   // redirect our user back to the form with the errors from the validator
   return Redirect::to('/prop'.$id)
       ->withErrors($validator);
@@ -351,7 +351,6 @@ if ($validator->fails()) {
 
   // report has passed all tests!
   // let him enter the database
-  $id     = Input::get('property_id');
   // create the data for report
 
   $code     = Input::get('code');

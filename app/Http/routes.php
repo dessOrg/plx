@@ -76,7 +76,7 @@ $this->get('/del{id}', 'IndexController@deladd');
 $this->get('/image{id}', 'IndexController@loadimage');
 $this->post('/image{id}', 'IndexController@addimage');
 $this->get('/delimage{id}/{p_id}', 'IndexController@delimage');
-$this->post('/pay', 'IndexController@pay');
+$this->post('/pay{id}', 'IndexController@pay');
 
 
 $this->get('/pending', 'IndexController@pending');
