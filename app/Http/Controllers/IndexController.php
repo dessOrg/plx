@@ -358,7 +358,7 @@ if ($validator->fails()) {
    $pay    = "1";
      $prop_obj = new Property();
      $prop_obj->id = $id;
-     $prop = Property::find($prop_obj->id); // Eloquent Model
+     $prop = Property::findOrFail($prop_obj->id); // Eloquent Model
      $prop->update(['code' => $code, 'phoneno' => $phoneno, 'pay' => $pay]);
 
   // save report
