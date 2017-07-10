@@ -251,7 +251,7 @@
         <div class="grid-box wow fadeInUp2" data-wow-delay="500ms">
           <div class="image">
           <span class="box-type"><span class="text">Sale</span></span>
-            <img src="https://s3.eu-west-2.amazonaws.com/plx254{{$key->image}}" alt="" height="234" width="360">
+            <img src="https://s3.eu-west-2.amazonaws.com/plx254{{$key->image}}" alt="" style="height:234; width:360;">
           </div>
           <div class="description">
             <h3><span class="type">{{$key->category}}:</span>
@@ -262,7 +262,7 @@
               <span class="meta">   Bath : {{$key->bath}} </span>
               <span class="meta">   {{$key->size}}</span></p>
             <span class="price">{{$key->aprice}}</span>
-            <a class="link-arrow iconic iconic-arrow-forward" href="{{url('/prop'.$key->id)}}"></a>
+            <a class="link-arrow iconic iconic-arrow-forward" href="{{url('/prop'.$key->id)}}">View</a>
           </div>
         </div>
         @endforeach
